@@ -1,0 +1,28 @@
+{
+  "name": "Sauce Launcher",
+  "version": "0.3",
+  "description": "Launch Sauce Scout sessions in any browser you want with a single click!",
+  "browser_action": {
+    "default_icon": "./img/sauce-logo-small.png",
+    "popup": "saucelauncher.html"
+  },
+  "options_page": "sauceprefs.html",
+  "permissions": [
+    "tabs"
+    , "http://*.saucelabs.com/"
+    , "https://*.saucelabs.com/"
+    , "http://*/*"
+    , "https://*/*"    
+  ],
+  "icons": {
+    "16": "./img/sauce_logo_16.png",
+    "48": "./img/sauce_logo_48.png",
+    "128": "./img/sauce_logo_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["bg/saucelauncher.js"]
+    }
+  ]
+}
