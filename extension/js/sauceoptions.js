@@ -117,7 +117,7 @@ var saveValues = function() {
       return;
     }
     else {
-      document.getElementById('sauceEnterError').innerHTML = "*Do you have available sauce minutes?";
+      document.getElementById('sauceEnterError').innerHTML = "*You're out of Sauce Minutes..<br><a href='http://www.saucelabs.com/pricing' style='cursor:pointer;color:blue;text-decoration:underline;'>See our available plans!</a>.";
       return;
     }
  }

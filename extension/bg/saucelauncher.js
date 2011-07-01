@@ -1,4 +1,5 @@
 var sauceURL = "https://saucelabs.com";
+
 var account = localStorage["sauceLaucherUsername"];
 var api_key = localStorage["sauceLaucherAccessKey"];
 
@@ -16,9 +17,13 @@ var createSession = function(os, browser, version, destURL) {
       if (req.readyState == 4) {
         if(req.status == 200) {
           var rObj = JSON.parse(req.responseText);
-          console.log(rObj);
-          var mydest = sauceURL+"/scout/live/"+rObj.task+"?auth_username="+account+"&auth_access_key="+api_key;
-          chrome.tabs.create({url: mydest, selected:false})
+          if (rObj.result == false) {
+            chrome.tabs.create({url: "http://www.saucelabs.com/pricing", selected:true})
+          }
+          else {
+            var mydest = sauceURL+"/scout/live/"+rObj.task+"?auth_username="+account+"&auth_access_key="+api_key;
+            chrome.tabs.create({url: mydest, selected:false})
+          }
         }
       }
     }
