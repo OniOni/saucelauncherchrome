@@ -59,7 +59,7 @@ var createAccount = function() {
           sauceCreateError.innerHTML = "There was an error creating your account.";
         }
       }
-    }
+    };
     req.send(JSON.stringify(payObj));
   }
   catch(err) {
