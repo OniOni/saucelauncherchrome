@@ -1,4 +1,5 @@
 {
+  "manifest_version": 2,
   "name": "Sauce Launcher",
   "version": "0.3",
   "description": "Launch Sauce Scout sessions in any browser you want with a single click!",
