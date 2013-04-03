@@ -11,10 +11,8 @@ $(function () {
 
     $('.pullDown').each(function () {
 	var parent = $(this).parent(),
-	    height = 0;// parseInt(parent.css('padding-top').split('px')[0]);
-	
-	// height += parseInt(parent.css('padding-bottom').split('px')[0]);
-	
+	    height = 0;
+
 	parent.children().each(function () {
 	    height += $(this).height();
 	});
