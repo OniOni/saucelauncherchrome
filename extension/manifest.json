@@ -1,11 +1,11 @@
 {
   "manifest_version": 2,
   "name": "Sauce Launcher",
-  "version": "0.3",
+  "version": "0.5",
   "description": "Launch Sauce Scout sessions in any browser you want with a single click!",
   "browser_action": {
     "default_icon": "./img/sauce-logo-small.png",
-    "popup": "saucelauncher.html"
+    "default_popup": "saucelauncher.html"
   },
   "options_page": "sauceprefs.html",
   "permissions": [
@@ -25,5 +25,7 @@
       "matches": ["http://*/*", "https://*/*"],
       "js": ["bg/saucelauncher.js"]
     }
-  ]
+  ],
+  "offline_enabled": true,
+  "omnibox": {"keyword": "saucelauncher"}
 }
