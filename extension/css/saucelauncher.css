@@ -13,6 +13,10 @@ body {
     overflow: auto;
 }
 
+.popupContainer {
+    width: 610px
+}
+
 .sauceContainer {
     width: 44%;
     background-color: rgb(242, 243, 243);
