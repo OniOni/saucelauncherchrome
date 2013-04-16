@@ -1,7 +1,7 @@
 <link href="./css/saucelauncher.css" media="screen" rel="stylesheet" type="text/css" />
  
-<script language="javascript" type="text/javascript" src="./js/sauceoptions.js"></script>
 <script language="javascript" type="text/javascript" src="./js/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="./js/sauceoptions.js"></script>
 
 <script language="javascript" type="text/javascript" src="./js/bootleg.js"></script>
 
@@ -27,7 +27,7 @@
       <input type="text" name="email" id="email">
       <label>Password: </label>
       <input type="password" name="password" id="password">
-      <button class="pullRight" type="button" onclick="createAccount()">Sign Up</button>
+      <button class="pullRight" type="button" id="createAccount">Sign Up</button>
     </fieldset>
     <div style="color: red; " id="sauceCreateError"></div>
 
@@ -38,21 +38,7 @@
       <input type="text" name="username" id="usernameEnter">
       <label>Access Key: </label>
       <input type="password" name="api_key" id="api_key">
-      <button class="pullRight pullDown" type="button" onclick="saveValues()" id="save">Save</button>
+      <button class="pullRight pullDown" type="button" id="save">Save</button>
     </fieldset>
     <div style="color: red; " id="sauceEnterError"></div>
 </div>
-
-<script type="text/javascript" charset="utf-8">
-  jQuery("#enterUsernameTable").find("input").keypress(function(e) {
-    if (e.keyCode == 13) {
-      saveValues();
-    }
-  });
-  
-  jQuery("#createAccountTable").find("input").keypress(function(e) {
-    if (e.keyCode == 13) {
-      createAccount();
-    }
-  });
-</script>

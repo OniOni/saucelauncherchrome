@@ -132,3 +132,20 @@ var saveValues = function() {
    document.getElementById('sauceEnterError').innerHTML = "*Please fill out both fields.";
  }
 };
+
+$(function () {
+    $('#save').click(saveValues);
+    $('#createAccount').click(createAccount);
+
+    jQuery("#sauceCreateContainer").find("input").keypress(function(e) {
+	if (e.keyCode == 13) {
+	    saveValues();
+	}
+    });
+
+    jQuery("#sauceSignupContainer").find("input").keypress(function(e) {
+	if (e.keyCode == 13) {
+	    createAccount();
+	}
+    });
+})
