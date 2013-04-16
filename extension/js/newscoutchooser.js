@@ -1,7 +1,8 @@
 // Mathieu Sabourin
 
 // Config
-var url = 'http://www.saucelabs.com';
+var root = 'http://www.saucelabs.com',
+    url = '/images/scoutchooser/';
 
 var ENTER_KEY = 13,
     ESCAPE_KEY = 27;
@@ -145,7 +146,7 @@ newscoutchooser._build = function (div, popup, on_choose, cb) {
     });
 
     $.ajax({
-	url: url+'/rest/v1/info/scout',
+	url: root+'/rest/v1/info/scout',
 	dataType: 'json',
 	success: function (data, text) {
 	    // Returns a dict of form {os: {browser: [versions ...]}
@@ -476,11 +477,11 @@ newscoutchooser.build_os_row = function (div, os, browser, pane_div, pane_info) 
 
     newscoutchooser.highlight_on_hover(div);
 
-    icon.attr('src', url+'/images/newlaunchpicker/os/small/'+os.toLowerCase()+'.png');
+    icon.attr('src', root+url+'/os/small/'+os.toLowerCase()+'.png');
     icon.addClass('icon');
     icon.addClass('scout-center');
 
-    arrow.attr('src', url+'/images/newlaunchpicker/arrow.png');
+    arrow.attr('src', root+url+'/arrow.png');
     arrow.css({
 	paddingRight: '5px',
 	'float': 'right'
@@ -567,7 +568,7 @@ newscoutchooser.build_browser_row = function (div, browser, version) {
 
     newscoutchooser.highlight_on_hover(div);
 
-    icon.attr('src', url+'/images/newlaunchpicker/browser/small/'+b+'.png');
+    icon.attr('src', root+url+'/browser/small/'+b+'.png');
     icon.addClass('icon');
     icon.addClass('scout-center');
 
@@ -621,7 +622,7 @@ newscoutchooser.launch_scout = function () {
 	  introMsg += "<li>All of our platforms and browsers</li>";
 	  introMsg += "<li>Use Sauce Launcher browser Add-ons";
 	  introMsg += "<li>Access to Sauce Automated Testing Cloud</li>";
-	  introMsg += "<center><img style='width:200px;' src="+url+"/images/all_browsers.png'></center>";
+	  introMsg += "<center><img style='width:200px;' src="+root+"/images/all_browsers.png'></center>";
         quicksignup.init(true, window.location, "<b style='font-size:21px'>Sign up!</b>", introMsg, 530, 450);
 	return;
     }
@@ -772,7 +773,7 @@ newscoutchooser.update_combo = function () {
 newscoutchooser.build_combo_element = function (div, el) {
     var icon = $('<img>');
 
-    icon.attr('src', url+'/images/newlaunchpicker/'+el.toLowerCase()+'.png');
+    icon.attr('src', root+url+el.toLowerCase()+'.png');
     icon.css({
 	marginRight: '2px'
     });
