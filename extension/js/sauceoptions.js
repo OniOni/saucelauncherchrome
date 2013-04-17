@@ -126,6 +126,7 @@ var saveValues = function() {
    sauceUsername(name);
    sauceAccessKey(key);
    var content = document.getElementById('sauceContent');
+   content.classList.add('goodNews');
    content.innerHTML = "<h2>Thanks, "+name+"!</h2> You are all set to start Scouting.";
  }
  else {
